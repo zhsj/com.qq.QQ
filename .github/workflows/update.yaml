@@ -11,9 +11,8 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
-    if: github.repository_owner == 'flathub'
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v4
 
       - name: Install dnsutils
         run: |
@@ -83,4 +82,4 @@ jobs:
                        -e "s/^TIMEOUT_TOTAL = [0-9]* \* [0-9]*$/TIMEOUT_TOTAL = 60 * 60/" \
                        /app/src/lib/__init__.py && \
                 exec /app/flatpak-external-data-checker \
-                    --update --never-fork --require-important-update com.qq.QQ.yaml'
+                    --update --never-fork --require-important-update -v com.qq.QQ.yaml'
