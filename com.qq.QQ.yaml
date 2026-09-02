@@ -144,11 +144,9 @@ modules:
         sha256: d085dd89397225061eb9f194308f688129818ed445777e97a4a0a16e13d7b0e8
         size: 185828040
         x-checker-data:
-          type: json
-          url: https://cdn-go.cn/qq-web/im.qq.com_new/latest/rainbow/pcConfig.json
-          version-query: .Linux.version
-          url-query: .Linux.x64DownloadUrl.deb | sub("QQNTV2"; "QQNT")
-          timestamp-query: .Linux.updateDate
+          type: html
+          url: https://docs.qq.com/doc/DVXNoRlpKaWhEY015
+          pattern: (https://qqdl\.gtimg\.cn/qqfile/QQNT/[^/]+/beta/[^/]+/linuxqq_([^_]+)_amd64\.deb)
           is-main-source: true
 
       - type: extra-data
@@ -158,8 +156,6 @@ modules:
         sha256: 8796ccfd66acc025ef18db37185532d40bc8c58921e17da6d28c295acbcf8f92
         size: 205524324
         x-checker-data:
-          type: json
-          url: https://cdn-go.cn/qq-web/im.qq.com_new/latest/rainbow/pcConfig.json
-          version-query: .Linux.version
-          url-query: .Linux.armDownloadUrl.deb | sub("QQNTV2"; "QQNT")
-          timestamp-query: .Linux.updateDate
+          type: html
+          url: https://docs.qq.com/doc/DVXNoRlpKaWhEY015
+          pattern: (https://qqdl\.gtimg\.cn/qqfile/QQNT/[^/]+/beta/[^/]+/linuxqq_([^_]+)_arm64\.deb)
